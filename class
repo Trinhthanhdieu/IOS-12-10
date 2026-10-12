@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string id;
+    string name;
+    int age;
+    double gpa;
+
+public:
+    Student() { id = ""; name = ""; age = 0; gpa = 0.0; }
+
+    Student(string id) {
+        this->id = id;
+        name = "";
+        age = 0;
+        gpa = 0.0;
+    }
+
+    Student(string id, string name) {
+        this->id = id;
+        this->name = name;
+        age = 0;
+        gpa = 0.0;
+    }
+
+    Student(string id, string name, int age, double gpa) {
+        this->id = id;
+        this->name = name;
+        this->age = age;
+        this->gpa = gpa;
+    }
+
+    // Getters
+    string getId() const { return id; }
+    string getName() const { return name; }
+    int getAge() const { return age; }
+    double getGPA() const { return gpa; }
+
+    // Setters
+    void setId(string newId) { id = newId; }
+    void setName(string newName) { name = newName; }
+    void setAge(int newAge) { age = newAge; }
+    void setGPA(double newGPA) { gpa = newGPA; }
+
+    // Other methods
+    void displayInfo() const {
+        cout << "ID: " << id << ", Name: " << name
+             << ", Age: " << age << ", GPA: " << gpa << endl;
+    }
+
+    bool isExcellent() const {
+        return gpa >= 3.5;
+    }
+
+    void updateGPA(double newGPA) {
+        gpa = newGPA;
+    }
+};
